@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+        <title>lombok</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">LO</div>
+            <ul>
+                <div class="bars b-2">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <li><a href="#about">about</a></li>
+                <li><a href="#articles">articles</a></li>
+                <li><a href="#subscribe">subscribe</a></li>
+            </ul>
+            <div class="bars b-1">
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <header>
+            <img src="img/blur-branches-close-up-environment-2.jpg" alt="">
+            <div class="info">
+                <h1>LOMBOK</h1>
+                <h4>HOLISTIC HEALTH</h4>
+                <div class="break-line"></div>
+            </div>
+        </header>
+        <div class="articals-section" id="articles">
+            <h4>
+                ARTICLES
+                <div class="break-line"></div>
+            </h4>
+            <div class="articals container">
+                <div class="artical">
+                    <img src="img/art-1.jpg" alt="">
+                    <div class="break-line"></div>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Omnis mollitia consequatur
+                    </p>
+                </div>
+                <div class="artical">
+                    <img src="img/art-2.jpg" alt="">
+                    <div class="break-line"></div>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Omnis mollitia consequatur
+                    </p>
+                </div>
+                <div class="artical">
+                    <img src="img/art-3.jpg" alt="">
+                    <div class="break-line"></div>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Omnis mollitia consequatur
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="about-section" id="about">
+            <img src="img/about.jpg" alt="">
+            <div class="about-text">
+                <h4>ABOUT</h4>
+                <div class="break-line"></div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Vel nam iste, voluptas veniam deserunt porro quidem officiis
+                    impedit tenetur nemo, quis enim asperiores. Ipsa distinctio
+                    architecto iure, soluta perspiciatis dolor.
+                </p>
+            </div>
+        </div>
+        <div class="subscribe-section" id="subscribe">
+            <h1>SUBSCRIBE</h1>
+            <h4>Sign-up to our newsletter</h4>
+            <input type="email" class="email" placeholder="Your Email">
+            <button> SUBMIT</button>
+        </div>
+        <footer>
+            <ul>
+                <li><a href="#about">about</a></li>
+                <li><a href="#articles">articles</a></li>
+                <li><a href="#subscribe">subscribe</a></li>
+            </ul>
+            <h6>
+                Copyright 2020 by Refsnes Data. All Rights Reserved
+                &#xa9; 
+            </h6>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            var bars1 = document.querySelector(".b-1");
+            var bars2 = document.querySelector(".b-2");
+            var menu = document.querySelector(".navbar ul");
+            var body = document.querySelector("body");
+
+            bars1.addEventListener("click", () => {
+                bars1.classList.add("bars-efct");
+                bars2.classList.add("bars-efct");
+                body.classList.add("slide");
+            });
+            bars2.addEventListener("click", () => {
+                bars2.classList.remove("bars-efct");
+                bars2.classList.remove("bars-efct");
+                body.classList.remove("slide");
+            });
+            $(document).ready(function(){
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+            } // End if
+        });
+        });
+        </script>
+    </body>
+</html>

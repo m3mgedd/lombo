@@ -2,7 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content='width=100vw; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+        <meta name="viewport" content="width=device-width" />
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
         <title>lombok</title>
@@ -11,12 +12,8 @@
         <div class="navbar">
             <div class="logo">LO</div>
             <ul>
-                <div class="bars b-2">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-                <li><a href="#about">about</a></li>
                 <li><a href="#articles">articles</a></li>
+                <li><a href="#about">about</a></li>
                 <li><a href="#subscribe">subscribe</a></li>
             </ul>
             <div class="bars b-1">
@@ -85,8 +82,8 @@
         </div>
         <footer>
             <ul>
-                <li><a href="#about">about</a></li>
                 <li><a href="#articles">articles</a></li>
+                <li><a href="#about">about</a></li>
                 <li><a href="#subscribe">subscribe</a></li>
             </ul>
             <h6>
@@ -97,29 +94,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
             var bars1 = document.querySelector(".b-1");
-            var bars2 = document.querySelector(".b-2");
             var menu = document.querySelector(".navbar ul");
             var body = document.querySelector("body");
             var link = document.querySelectorAll(".navbar ul li a");
 
             bars1.addEventListener("click", () => {
-                bars1.classList.add("bars-efct");
-                bars2.classList.add("bars-efct");
-                body.classList.add("slide");
-                body.classList.add("body-anm");
-            });
-            bars2.addEventListener("click", () => {
-                bars2.classList.remove("bars-efct");
-                bars2.classList.remove("bars-efct");
-                body.classList.remove("slide");
-                body.classList.remove("body-anm");
+                bars1.classList.toggle("bars-efct");
+                menu.classList.toggle("slide");
+                body.classList.toggle("body-anm");
             });
             for(i = 0; i < link.length; i++){
                 link[i].addEventListener("click", () => {
-                    bars2.classList.remove("bars-efct");
-                    bars2.classList.remove("bars-efct");
-                    body.classList.remove("slide");
-                body.classList.remove("body-anm");
+                    bars1.classList.remove("bars-efct");
+                    menu.classList.remove("slide");
+                    body.classList.remove("body-anm");
                 });
             }
             $(document).ready(function(){
@@ -146,27 +134,27 @@
                     } // End if
                 });
             });
+        //mouse cursor
+            if (body.clientWidth >= 768) {
+                console.log(body.clientWidth);
+                body.insertBefore(document.createElement("div"), body.firstChild);// append the curser
+                var cursor = document.querySelector("body > div");
 
-                    
-            //mouse cursor
+                cursor.setAttribute('class', 'cursor');
 
-            body.insertBefore(document.createElement("div"), body.firstChild);// append the curser
-            var cursor = document.querySelector("body > div");
-
-            cursor.setAttribute('class', 'cursor');
-
-            window.addEventListener('mousemove', (e) => {
-                cursor.style.top = e.pageY + "px";
-                cursor.style.left = e.pageX + "px";
-            });
-            document.onmousedown = function () {
-                cursor.style.height = cursor.clientHeight + (cursor.clientHeight / 2) + "px";
-                cursor.style.width = cursor.clientWidth + (cursor.clientWidth / 2) + "px";
-            }
-            document.onmouseup = function () {
-                cursor.style.height = 10 + "px";
-                cursor.style.width = 10 + "px";
-            }
+                window.addEventListener('mousemove', (e) => {
+                    cursor.style.top = e.pageY + "px";
+                    cursor.style.left = e.pageX + "px";
+                });
+                document.onmousedown = function () {
+                    cursor.style.height = cursor.clientHeight + (cursor.clientHeight / 2) + "px";
+                    cursor.style.width = cursor.clientWidth + (cursor.clientWidth / 2) + "px";
+                }
+                document.onmouseup = function () {
+                    cursor.style.height = 10 + "px";
+                    cursor.style.width = 10 + "px";
+                }
+            }      
 
         </script>
     </body>

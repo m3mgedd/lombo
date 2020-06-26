@@ -152,7 +152,7 @@ header .info h4 {
     width: 100%;
     background-color: #ffffff;
     min-height: 450px;
-    padding: 30px 20px;
+    padding: 0;
     box-shadow: 2px 2px 50px #0000004d;
     transition: all ease-out 0.5s;
 }
@@ -163,6 +163,7 @@ header .info h4 {
 .articals-section .articals .artical img {
     width: 100%;
     object-fit: cover;
+    max-height: 225px;
 }
 .articals-section .articals .artical .break-line {
     margin: auto;

@@ -151,8 +151,8 @@ header .info h4 {
 .articals-section .articals .artical {
     width: 100%;
     background-color: #ffffff;
-    height: 408px;
-    padding: 0;
+    min-height: 450px;
+    padding: 30px 20px;
     box-shadow: 2px 2px 50px #0000004d;
     transition: all ease-out 0.5s;
 }
